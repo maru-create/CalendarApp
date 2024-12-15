@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*全体*/
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #666;
+}
+#header {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+}
+
+/*カレンダー*/
+#calendar {
+  text-align: center;
+  width: 100%;
+}
+table {
+  outline: 2px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  color: #000;
+  height: 20px;
+  outline: 1px solid #ddd;
+  text-align: center;
+}
+td {
+  outline: 1px solid #ddd;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+  text-align: center;
+  width: 120px;
+  height: 60px;
+}
+[data-event-id] {
+  color: #000;
+  background-color: yellow;
+}
+/*日曜日*/
+td:first-child {
+  color: red;
+}
+/*土曜日*/
+td:last-child {
+  color: blue;
+}
+/*前後月の日付*/
+td.disabled {
+  color: #ccc;
+}
+
+/*ボタン*/
+#next-prev-button {
+  position: relative;
+}
+#next-prev-button button {
+  cursor: pointer;
+  background: #b78d4a;
+  color: #fff;
+  border: 1px solid #b78d4a;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+#next-prev-button button:hover {
+  background-color: #d4bb92;
+  border-color: #d4bb92;
+}
+#prev {
+  float: left;
+}
+#next {
+  float: right;
+}
+
+/* contextmenu */
+#contextmenu {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: #fff;
+}
+#contextmenu button {
+  cursor: pointer;
+}

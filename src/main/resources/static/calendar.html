@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- xxxx年xx月を表示 -->
+      <h1 id="header"></h1>
+      <!-- イベント登録フォーム -->
+      <div>
+        <h3>予定を追加</h3>
+        <form id="add-event-form">
+          <label for="add-event-date">日付:</label>
+          <input id="add-event-date" name="date" required />
+
+          <label for="add-event-title">タイトル:</label>
+          <input
+            type="text"
+            id="add-event-title"
+            name="title"
+            placeholder="タイトル"
+            required
+          />
+
+          <label for="add-event-description">詳細:</label>
+          <textarea
+            id="add-event-description"
+            name="description"
+            placeholder="詳細"
+            required
+          ></textarea>
+          <button type="submit">登録</button>
+        </form>
+      </div>
+      <!-- ボタンクリックで月移動 -->
+      <div id="next-prev-button">
+        <button id="prev" onclick="prev()">＜＜</button>
+        <button id="next" onclick="next()">＞＞</button>
+      </div>
+      <!-- カレンダー -->
+      <div id="calendar"></div>
+      <!-- contextmenuを表示 -->
+      <div id="contextmenu">
+        <button type="submit">この予定を削除する</button>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
