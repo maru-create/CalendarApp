@@ -19,5 +19,21 @@ Java学習中の「ららまる」です。( Xアカウント:https://x.com/rara
 # 操作動画  
 https://github.com/user-attachments/assets/f8dbc6c6-8a25-418d-8c3e-68ac65be8af0
 
+# 操作方法  
+- ## 予定の登録方法
+<img width="1456" alt="予定の登録方法" src="https://github.com/user-attachments/assets/b6df0a9c-4eb9-4286-add2-d53699fbde72" />
 
+
+
+- ## 予定の削除方法  
+![予定の削除方法](https://github.com/user-attachments/assets/e89c739f-5687-4a75-9265-f62fde1647f2)
+
+
+# 利用方法
+
+# 開発環境
+
+# 今後の展望
+
+# おわりに
 
