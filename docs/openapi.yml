@@ -1,0 +1,176 @@
+openapi: 3.0.3
+info:
+  title: CalendarAppのAPI仕様書
+  version: 1.0.11
+tags:
+  - name: calendar
+    description: カレンダーアプリの機能
+paths:
+  /calendar:
+    get:
+      tags:
+        - calendar
+      summary: カレンダーを表示します
+      responses:
+        "200":
+          description: 成功
+          content:
+            text/html:
+              schema:
+                type: string
+              example: "<html>...</html>"
+  /calendar/register:
+    post:
+      tags:
+        - calendar
+      summary: 新しいイベントをデータベースに登録します
+      parameters:
+        - name: title
+          in: query
+          description: イベントのタイトル
+          required: true
+          schema:
+            type: string
+        - name: description
+          in: query
+          description: イベントの詳細
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: イベントの日付
+          required: true
+          schema:
+            type: string
+            format: date
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Register"
+      responses:
+        "200":
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+  /calendar/eventsList:
+    get:
+      tags:
+        - calendar
+      summary: 登録されているすべてのイベントを取得します
+      responses:
+        "200":
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AllEvent"
+  /calendar/eventsTitle:
+    get:
+      tags:
+        - calendar
+      summary: タイトルでイベントを検索します
+      parameters:
+        - name: title
+          in: query
+          description: 検索するタイトル
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+  /calendar/eventsDate:
+    get:
+      tags:
+        - calendar
+      summary: 日付でイベントを検索します
+      parameters:
+        - name: year
+          in: query
+          description: 検索する年
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: month
+          in: query
+          description: 検索する月
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+  /calendar/delete:
+    delete:
+      tags:
+        - calendar
+      summary: 指定されたイベントを削除します
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: 成功
+components:
+  schemas:
+    Register:
+      type: object
+      properties:
+        title:
+          type: string
+          example: 会議
+        description:
+          type: string
+          example: 予算検討会
+        date:
+          type: string
+          format: date
+          example: 2024-10-25
+    Event:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        title:
+          type: string
+          example: 会議
+        description:
+          type: string
+          example: 予算検討会
+        date:
+          type: string
+          format: date
+          example: 2024-10-25
+    AllEvent:
+      type: array
+      items:
+        $ref: "#/components/schemas/Event"
+      example:
+        - id: 1
+          title: 会議
+          description: 予算検討会
+          date: 2024-10-25
+        - id: 2
+          title: 行事
+          description: 初詣
+          date: 2025-01-01
