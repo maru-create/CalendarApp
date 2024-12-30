@@ -52,19 +52,19 @@ https://github.com/user-attachments/assets/f8dbc6c6-8a25-418d-8c3e-68ac65be8af0
 
 # ER図　　
 現在のデータベース構造は以下のとおりです  
-|  events  |  
-| :---:   |  
-| id (PK)   |  
-| title    |  
-| description   |  
-| date   |  
+|  events  |  型  |
+| :---:   |  :---: |
+| id (PK)   |  int  |
+| title    |  String  |
+| description   |  String  |
+| date   |  LocalDate  |
 
 **将来的な拡張予定**  
 1. ユーザー管理機能：usersテーブルを作成し、個人ごとのイベント管理を可能とする
 2. カテゴリ機能：categoriesテーブルを作成し、イベントの分類を可能とする  
 
 # API仕様書  
-[CalendarAppのAPI仕様書.pdf](https://github.com/user-attachments/files/18261555/CalendarApp.API.pdf)
+https://maru-create.github.io/CalendarApp/swagger/
 
 
 # ハマった点、苦労した点  
