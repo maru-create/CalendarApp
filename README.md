@@ -52,12 +52,14 @@ https://github.com/user-attachments/assets/f8dbc6c6-8a25-418d-8c3e-68ac65be8af0
 
 # ER図　　
 現在のデータベース構造は以下のとおりです  
-|  events  |  型  |
+> **events**  
+
+|  属性  |  型  |
 | :---:   |  :---: |
-| id (PK)   |  int  |
-| title    |  String  |
-| description   |  String  |
-| date   |  LocalDate  |
+| id (PK)   |  INT  |
+| title    |  VARCHAR(30)  |
+| description   |  VARCHAR(200)  |
+| date   |  DATE  |
 
 **将来的な拡張予定**  
 1. ユーザー管理機能：usersテーブルを作成し、個人ごとのイベント管理を可能とする
